@@ -1,0 +1,10 @@
+<div class="container">
+  <% @users.each do |user| %>
+    <div class="card col-6 mt-4">
+      <%= user.name %>
+      <%= user.bio %>
+      <%= user.email %>
+      <%= user.avatar %>
+    </div>
+  <% end %>
+</div>
