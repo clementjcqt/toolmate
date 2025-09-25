@@ -1,10 +1,9 @@
 <%= simple_form_for @user do |f| %>
   <div class="form-inputs">
-    <%= f.input :avatar,
-    label: "",
-    label_html: { class: "form-label fw-semibold" },
-    input_html: { class: "form-control" },
-    wrapper_html: { class: "mb-3" } %>
+    <%= f.input :avatar, as: :file, input_html: { accept: "image/jpeg,image/png" },
+    hint: "Files accepted: jpeg, png"%>
+    <%= f.input :name, hint: "Enter your name" %>
+    <%= f.input :bio, hint: "Introduce yourself to your futyre Toolmates !" %>
   </div>
-  <%= f.button :submit, '', class: 'btn btn-primary mt-3' %>
+  <%= f.button :submit, "I'm done !", class: 'btn btn-primary mt-3' %>
 <% end %>

@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one_attached :avatar
+  validates :avatar,
+            content_type: %w[image/jpeg image/png],
+            size: { less_than: 2.megabytes, message: "must be under 2 MB" },
+            limit: { max: 1 }
 end
