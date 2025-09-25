@@ -10,3 +10,14 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+a {
+  color: $dark-green;
+  text-decoration: none;
+
+  &:hover {
+    color: darken($light-green, 10%);
+    text-decoration: underline;
+  }
+}
