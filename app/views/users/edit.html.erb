@@ -1,0 +1,10 @@
+<%= simple_form_for @user do |f| %>
+  <div class="form-inputs">
+    <%= f.input :avatar,
+    label: "",
+    label_html: { class: "form-label fw-semibold" },
+    input_html: { class: "form-control" },
+    wrapper_html: { class: "mb-3" } %>
+  </div>
+  <%= f.button :submit, '', class: 'btn btn-primary mt-3' %>
+<% end %>
