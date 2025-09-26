@@ -5,10 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one_attached :avatar
+  has_many :tools, dependent: :destroy
+
   validates :avatar,
             content_type: %w[image/jpeg image/png],
-            size: { less_than: 2.megabytes, message: "must be under 2 MB" },
-            limit: { max: 1 }
+            size: { less_than: 2.megabytes, message: "taille maximale 2 MB" }
   validates :name, presence: true, length: { maximum: 50 }, on: :update
   validates :bio, length: { maximum: 240 }, on: :update
   validates :street, presence: true, on: :update
