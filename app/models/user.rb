@@ -14,4 +14,14 @@ class User < ApplicationRecord
   validates :street, presence: true
   validates :city, presence: true
   validates :post_code, presence: true
+
+  geocoded_by :address
+  after_validation :geocode
+
+
+  private
+  
+  def address
+    [street, city, post_code, country].compact.join(', ')
+  end
 end
