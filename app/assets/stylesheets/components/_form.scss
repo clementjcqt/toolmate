@@ -1,15 +1,21 @@
-.simple_form {
-
+.form-actions {
+  padding: 1rem 0 0.5rem 0;
 }
 
 .form {
   margin: 0 auto;
   width: 600px;
 
-  h1, h2 {
+
+  h1 {
     text-align: center;
     letter-spacing: -1px;
-    padding: 0.5rem 0;
+    padding: 3rem 0 0.5rem 0;
     color: $dark-green;
+  }
+  h2 {
+    color: $dark-green;
+    text-align: center;
+    padding: 1rem 0;
   }
 }
