@@ -1,24 +1,26 @@
 <div class="form">
-  <h1>Welcome back !</h1>
-  <h2>Your neighbors missed you!</h2>
+  <h1>Salut !</h1>
+  <h2>Tes voisins te manquent ?</h2>
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs">
       <%= f.input :email,
-                required: false,
+                required: true,
                 autofocus: true,
-                label: "Email*",
+                label: "Addresse email",
                 input_html: { autocomplete: "email" } %>
       <%= f.input :password,
-                required: false,
-                label: "Password*",
+                required: true,
+                label: "Mot de passe",
                 input_html: { autocomplete: "current-password" } %>
       <div class="bottom-form d-flex justify-content-between">
-        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-        <span>* Required</span>
+        <%= f.input :remember_me,
+                    label: "Se rappeler de moi",
+                    as: :boolean if devise_mapping.rememberable? %>
+        <span>* Requis</span>
       </div>
     </div>
     <div class="form-actions d-flex align-items-center justify-content-between">
-      <%= f.button :submit, "Log in", class:"button" %>
+      <%= f.button :submit, "Se connecter", class:"button" %>
       <%= render "devise/shared/links" %>
     </div>
   <% end %>

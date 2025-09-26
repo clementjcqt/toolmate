@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to dashboard_path, notice: "Congrats, your profile is updated !"
+      redirect_to dashboard_path, notice: "Félicitations, bienvenue sur Toolmate ! !"
     else
       render :edit, status: :unprocessable_entity
     end
@@ -17,10 +17,10 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
-    redirect_to root_path, alert: "Not allowed." unless @user == current_user
+    redirect_to root_path, alert: "Tu n'as pas accès à cette page." unless @user == current_user
   end
 
   def user_params
-    params.require(:user).permit(:bio, :location, :avatar)
+    params.require(:user).permit(:bio, :street, :city, :post_code, :avatar, :name)
   end
 end

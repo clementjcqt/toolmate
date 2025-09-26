@@ -1,9 +1,20 @@
-<%= simple_form_for @user do |f| %>
-  <div class="form-inputs">
-    <%= f.input :avatar, as: :file, input_html: { accept: "image/jpeg,image/png" },
-    hint: "Files accepted: jpeg, png"%>
-    <%= f.input :name, hint: "Enter your name" %>
-    <%= f.input :bio, hint: "Introduce yourself to your future Toolmates !" %>
+<div class=" form form-inputs">
+  <h2 class="mt-4">Avant de commencer, prends 2 minutes pour compléter ton profil</h2>
+  <%= simple_form_for @user do |f| %>
+    <div class="form-inputs">
+      <%= f.input :avatar, as: :file, input_html: { accept: "image/jpeg,image/png" },
+    hint: "Fichiers autorisés: jpeg, png"%>
+      <%= f.input :name, label: "Ton prénom" %>
+      <%= f.input :bio, hint: "Introduis toi à tes futur(e)s ToolMates ! (max 240 caractères)" %>
+      <div class="address">
+        <%= f.input :street, label: "N° et rue" %>
+        <%= f.input :city, label: "Ville" %>
+        <%= f.input :post_code, label: "Code postal" %>
+      </div>
+    </div>
+    <div class="form-actions d-flex justify-content-between align-items-center mb-4">
+      <%= f.button :submit, "Go bricoler !", class: 'button' %>
+      <span>* Requis</span>
+    <% end %>
   </div>
-  <%= f.button :submit, "I'm done !", class: 'button' %>
-<% end %>
+</div>
