@@ -19,3 +19,18 @@
   width: 50px;
   border-radius: 10px;
 }
+
+.dropdown-menu {
+  background: $body-green;
+  border-radius: 5px;
+  border: 1px solid $light-green;
+}
+
+a.dropdown-item {
+  color: $dark-green;
+
+  &:hover {
+    background: $body-green;
+    color: lighten($dark-green, 20%);
+  }
+}
