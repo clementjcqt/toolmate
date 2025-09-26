@@ -17,7 +17,7 @@ class Tool < ApplicationRecord
   }
 
   enum condition: {
-    new: 0,
+    brand_new: 0,
     good: 1,
     used: 2
   }
@@ -31,7 +31,7 @@ class Tool < ApplicationRecord
   }
 
   CONDITION_LABELS = {
-    new: "Neuf",
+    brand_new: "Neuf",
     good: "Bon état",
     used: "Usé"
   }
