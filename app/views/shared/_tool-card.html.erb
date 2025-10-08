@@ -1,0 +1,12 @@
+  <div class="tool-card">
+    <h3><%= tool.name %></h3>
+    <p><%= tool.description %></p>
+
+    <% if tool.photos.attached? %>
+      <% tool.photos.each do |photo| %>
+        <%= image_tag photo, class: "tool-image" %>
+      <% end %>
+    <% else %>
+      <%= image_tag "placeholder.png", class: "tool-image" %>
+    <% end %>
+  </div>
