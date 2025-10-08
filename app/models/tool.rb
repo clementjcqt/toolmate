@@ -2,10 +2,10 @@ class Tool < ApplicationRecord
   belongs_to :user
   has_many_attached :photos
 
-  validates :name, :category, :price, :condition, :is_available, presence: true
+  validates :name, :category, :price, :condition, presence: true
   validates :photos,
             content_type: %w[image/jpeg image/png],
-            size: { less_than: 2.megabytes, message: "taille maximale 2 MB" },
+            size: { less_than: 4.megabytes, message: "taille maximale 4 MB" },
             limit: { min: 1, max: 3 }
 
   enum category: {
