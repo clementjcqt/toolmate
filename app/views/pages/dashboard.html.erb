@@ -1,1 +1,18 @@
-
+<div class="container top-header d-flex justify-content-end gap-3 mt-4 pe-4">
+  <span>
+    <svg width="40" height="40" viewBox="0 0 24 24" role="img" aria-label="Notifications" fill="#1c5a41">
+      <path d="M12 3c-3.866 0-7 3.134-7 7v4.5H4a2 2 0 0 0 0 4h16a2 2 0 0 0 0-4h-1V10c0-3.866-3.134-7-7-7Z"/>
+      <circle cx="12" cy="19" r="1.8"/>
+    </svg>
+  </span>
+  <%= image_tag("avatar", class:"avatar") %>
+</div>
+<div class="top-section">
+  <h2>Bonjour Clément</h2>
+  <ul class="dashboard-top-cards">
+    <li><h3><%= @available_tools %> outils disponibles</h3></li>
+    <%# Données en brut, à change plus tard %>
+    <li><h3>2 prêts en cours</h3></li>
+    <li><h3>1 demande en attente</h3></li>
+  </ul>
+</div>

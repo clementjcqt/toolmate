@@ -20,6 +20,7 @@
     text-align: center;
     color: $light-green;
     letter-spacing: -1px;
+    font-weight: 600;
   }
 
   ul {
@@ -59,7 +60,7 @@
 }
 
 .sidebar-nav .nav-link:hover,
-.sidebar-settings:hover {
+#settings:hover {
   opacity: 0.85;
   background: lighten($dark-green, 10%)
 }
