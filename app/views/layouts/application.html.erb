@@ -17,11 +17,9 @@
   </head>
   <body>
     <% if user_signed_in? %>
-      <%= render "shared/navbar" %>
+      <%= render "shared/sidebar" %>
     <% end %>
     <%= render "shared/flashes" %>
-    <div class="container">
       <%= yield %>
-    </div>
   </body>
 </html>
