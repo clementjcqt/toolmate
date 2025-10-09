@@ -43,13 +43,4 @@ class Tool < ApplicationRecord
   def condition_label
     CONDITION_LABELS[condition.to_sym]
   end
-
-  def available_tools
-    tools = current_user.tools
-    count = 0
-    tools.each do
-      count += 1 if is_available
-    end
-    count
-  end
 end

@@ -7,7 +7,8 @@ Tool.destroy_all
 User.destroy_all
 
 puts "Creating user..."
-user = User.create!(
+
+user1 = User.create!(
   email: "clement@clement.fr",
   name: "Clément",
   password: "password123",
@@ -15,6 +16,17 @@ user = User.create!(
   street: "41 Rue petit parc",
   city: "Bordeaux",
   post_code: 33_200
+)
+
+user2 = User.create!(
+  email: "emma.dupont@example.com",
+  name: "Emma Dupont",
+  password: "password123",
+  bio: "Bricoleuse passionnée et fan de projets collaboratifs.",
+  street: "12 Rue des Lilas",
+  city: "Lyon",
+  post_code: 69_000,
+  country: "France",
 )
 
 def image_path(filename)
@@ -99,7 +111,7 @@ def image_path_for(name)
 end
 
 tools.each do |attrs|
-  tool = Tool.new(attrs.merge(user: user))  # not saved yet
+  tool = Tool.new(attrs.merge(user: [user1, user2].sample)) # not saved yet
 
   if (path = image_path_for(attrs[:name]))
     tool.photos.attach(
@@ -119,5 +131,5 @@ tools.each do |attrs|
   end
 
   tool.save!  # now validations run with at least 1 photo attached
-  puts "✅ Created #{tool.name} with 1 photo"
+  puts "✅ Created #{tool.name} with 1 photo belonging to #{tool.user.name}"
 end

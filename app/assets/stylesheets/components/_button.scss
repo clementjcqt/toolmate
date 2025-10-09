@@ -1,10 +1,13 @@
 .button {
+  display: inline-flex;
   padding: 0.5rem 1.5rem;
   background: $dark-green;
   color: $body-green;
   border-radius: 0.5rem;
   border: 1px solid #1c5a41;
   transition: 0.3s ease;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     background: lighten($light-green, 20%);
