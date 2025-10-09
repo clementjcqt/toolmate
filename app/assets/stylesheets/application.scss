@@ -17,11 +17,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: $dark-green;
   text-decoration: none;
+  color: $body-green;
 
   &:hover {
-    color: darken($light-green, 10%);
-    text-decoration: underline;
+    color: white;
   }
 }
