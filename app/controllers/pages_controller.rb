@@ -7,6 +7,7 @@ class PagesController < ApplicationController
   def dashboard
     @user = current_user
     @tools = @user.tools
+    @available_tools = current_user.available_tools_count
   end
 
 end

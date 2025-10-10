@@ -3,6 +3,8 @@
   bottom: 16px;
   right: 16px;
   z-index: 1000;
-  background: $dark-green;
-  color: $body-green;
+  border-radius: $border-radius-sm;
+  background: $light-green;
+  color: $text-black;
+  font-size: $font-size-button;
 }

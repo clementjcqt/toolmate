@@ -1,20 +1,23 @@
 .button {
+  display: inline-flex;
   padding: 0.5rem 1.5rem;
   background: $dark-green;
-  color: $body-green;
+  color: $text-white;
   border-radius: 0.5rem;
-  border: 1px solid #1c5a41;
+  border: 1px solid $border-color;
   transition: 0.3s ease;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-button;
 
   &:hover {
-    background: lighten($light-green, 20%);
-    color: $dark-green;
-    border: 1px solid $dark-green;
-    text-shadow: 2px 2px 10px $body-green;
+    background: $dark-green-hover;
+    color: $text-white;
+    border: 1px solid $text-white;
   }
 }
 
 .form-check-input:checked {
   background: $dark-green;
-  border-color: $body-green;
+  border-color: $border-color;
 }

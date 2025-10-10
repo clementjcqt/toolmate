@@ -20,6 +20,10 @@ class User < ApplicationRecord
   geocoded_by :address
   after_validation :geocode
 
+  def available_tools_count
+    tools.where(is_available: true).count
+  end
+
   private
 
   def address

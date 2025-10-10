@@ -11,6 +11,71 @@
 @import "components/index";
 @import "pages/index";
 
+// ToolMate Typography System
+
+//  Headings
+h1, .h1 {
+  font-size: $font-size-h1;
+  font-weight: $font-weight-extrabold;
+  letter-spacing: $tracking-tightest;
+  line-height: 1.15;
+  color: $text-black;
+}
+
+h2, .h2 {
+  font-size: $font-size-h2;
+  font-weight: $font-weight-semibold;
+  letter-spacing: $tracking-tight;
+  line-height: 1.2;
+  color: $text-black;
+}
+
+h3, .h3 {
+  font-size: $font-size-h3;
+  font-weight: $font-weight-bold;
+  letter-spacing: $tracking-tight;
+  line-height: 1.3;
+  color: $text-black;
+}
+
+h4, .h4 {
+  font-size: $font-size-h4;
+  font-weight: $font-weight-medium;
+  letter-spacing: $tracking-normal;
+  line-height: 1.4;
+}
+
+h5, .h5 {
+  font-size: $font-size-h5;
+  font-weight: $font-weight-regular;
+  letter-spacing: $tracking-normal;
+  line-height: 1.45;
+  color: $text-light;
+}
+
+h6, .h6 {
+  font-size: $font-size-h6;
+  font-weight: $font-weight-regular;
+  letter-spacing: $tracking-wide;
+  line-height: 1.5;
+  color: $text-light;
+}
+
+// Paragraphs & small text
+p {
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  letter-spacing: $tracking-normal;
+  line-height: 1.6;
+  color: $text-light;
+}
+
+small, .small {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  letter-spacing: $tracking-wide;
+}
+
 
 h1, h2, h3, h4, h5, h6 {
   color: $dark-green;
@@ -18,9 +83,13 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   text-decoration: none;
-  color: $body-green;
+  color: $text-black;
 
   &:hover {
-    color: white;
+    color: $text-light;
   }
+}
+
+li {
+  list-style: none;
 }

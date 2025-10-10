@@ -1,1 +1,32 @@
-
+<div class="dashboard">
+  <header class="top-header d-flex justify-content-end gap-3 mt-4 pe-4 w-100">
+    <span>
+      <svg width="40" height="40" viewBox="0 0 24 24" role="img" aria-label="Notifications" fill="#1c5a41">
+        <path d="M12 3c-3.866 0-7 3.134-7 7v4.5H4a2 2 0 0 0 0 4h16a2 2 0 0 0 0-4h-1V10c0-3.866-3.134-7-7-7Z"/>
+        <circle cx="12" cy="19" r="1.8"/>
+      </svg>
+    </span>
+    <%= image_tag("avatar", class:"avatar") %>
+  </header>
+  <main class="container">
+    <div class="top-section mt-4">
+      <h2>Bonjour Clément,</h2>
+      <ul class="dashboard-top-cards">
+        <li>
+          <span class="top-content"><%= @available_tools %> outils disponibles</span>
+        </li>
+        <%# Données en brut, à change plus tard %>
+        <li>
+          <span class="top-content">1 prêt(s) en cours</span>
+        </li>
+        <li>
+          <span class="top-content">2 demande(s) en attente</span>
+        </li>
+      </ul>
+    </div>
+    <div class="middle-section mt-4">
+      <h3>Mes outils</h3>
+    </div>
+    <%= link_to "Se déconnecter", destroy_user_session_path, data: { turbo_method: :delete }, class:"button" %>
+  </main>
+</div>

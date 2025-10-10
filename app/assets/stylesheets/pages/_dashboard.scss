@@ -1,5 +1,36 @@
-.tools-section {
+.dashboard {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
+  margin-left: 220px;
+}
+
+.top-section {
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    min-width: 250px;
+    min-height: 100px;
+    padding: 1rem 3rem;
+    text-align: center;
+    background: $beige;
+    border-radius: 10px;
+    justify-content: center;
+    box-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.08),
+      0 4px 10px rgba(28, 90, 65, 0.12);
+    border: 1px solid $border-color;
+  }
+
 }

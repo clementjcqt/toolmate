@@ -10,15 +10,51 @@ $headings-font-family:   $headers-font;
 $body-bg:                $body-green;
 $font-size-base:         1rem;
 
-// Colors
-$body-color: $text-black;
-
 
 // Buttons & inputs' radius
-$border-radius-sm:            .0625rem;
-$border-radius:               .125rem;
-$border-radius-lg:            .25rem;
-$border-radius-xl:            .5rem;
-$border-radius-xxl:           1rem;
+// ToolMate Border Radius System
+$border-radius-sm: 0.25rem;   // small UI (badges, inputs)
+$border-radius: 0.5rem;       // default (buttons)
+$border-radius-lg: 0.75rem;   // medium surfaces (cards, modals)
+$border-radius-xl: 1rem;      // large containers, panels
+$border-radius-xxl: 1.25rem;  // optional, for hero sections / dashboard layout
+$border-radius-pill: 50rem;   // pill shapes (badges, tags)
 
-// Override other variables below!
+// Fonts sizes and styles
+
+// Font weights
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+// Font sizes
+$font-size-base: 1rem;   // 16px
+$font-size-sm: 0.875rem; // 14px
+$font-size-xs: 0.75rem;  // 12px
+
+$font-size-h6: 1rem;
+$font-size-h5: 1.125rem;
+$font-size-h4: 1.25rem;
+$font-size-h3: 1.5rem;
+$font-size-h2: 2rem;
+$font-size-h1: 2.5rem;
+
+// Specific sizes
+$font-size-button: 0.9375rem;  // 15px — clearer CTAs
+$font-size-nav: 0.9375rem;     // 15px — sidebar/top nav
+$font-size-input: 1rem;        // 16px — forms (mobile-friendly)
+$font-size-label: 0.875rem;    // 14px — form labels
+$font-size-helper: 0.8125rem;  // 13px — helper / form-text
+$font-size-badge: 0.75rem;     // 12px — pills, tags
+$font-size-tooltip: 0.75rem;   // 12px — tooltips
+$font-size-chip: 0.8125rem;    // 13px — custom chips/tags
+
+// Letter-spacing (tracking)
+$tracking-tightest: -0.04em;
+$tracking-tight: -0.02em;
+$tracking-normal: 0;
+$tracking-wide: 0.02em;
+$tracking-widest: 0.04em;
