@@ -1,8 +1,14 @@
-.dashboard {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.main {
   margin-left: 220px;
+  min-height: 100vh;
+  width: calc(100% - 220px);
+}
+
+.dashboard-wrap {
+  max-width: 1120px;
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: clamp(16px, 4vw, 40px);
 }
 
 .top-section {
@@ -20,7 +26,7 @@
   li {
     display: flex;
     align-items: center;
-    min-width: 250px;
+    width: 300px;
     min-height: 100px;
     padding: 1rem 3rem;
     text-align: center;
@@ -33,4 +39,10 @@
     border: 1px solid $border-color;
   }
 
+}
+
+
+@media (max-width: 992px) {
+  .sidebar { width: 72px; }
+  .main    { margin-left: 72px; width: calc(100% - 72px); }
 }

@@ -1,13 +1,13 @@
 .sidebar {
   position: fixed;
   top: 0;
-  left: 0;
   bottom: 0;
-  background: linear-gradient(90deg, $dark-green 0%, darken($dark-green, 5%) 100%);
+  left: 0;
   width: 220px;
-  padding: 0;
+  background: linear-gradient(90deg, $dark-green 0%, darken($dark-green, 5%) 100%);
   color: $text-white;
-  letter-spacing: 2px;
+  overflow-y: auto;   
+  z-index: 1000;
 
   a {
     padding: 1.2rem 2rem;
