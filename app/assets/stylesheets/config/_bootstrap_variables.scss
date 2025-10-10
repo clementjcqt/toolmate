@@ -15,10 +15,11 @@ $body-color: $text-black;
 
 
 // Buttons & inputs' radius
-$border-radius-sm:            .0625rem;
-$border-radius:               .125rem;
-$border-radius-lg:            .25rem;
-$border-radius-xl:            .5rem;
-$border-radius-xxl:           1rem;
-
+// 🧱 ToolMate Border Radius System
+$border-radius-sm: 0.25rem;   // small UI (badges, inputs)
+$border-radius: 0.5rem;       // default (buttons)
+$border-radius-lg: 0.75rem;   // medium surfaces (cards, modals)
+$border-radius-xl: 1rem;      // large containers, panels
+$border-radius-xxl: 1.25rem;  // optional, for hero sections / dashboard layout
+$border-radius-pill: 50rem;   // pill shapes (badges, tags)
 // Override other variables below!
