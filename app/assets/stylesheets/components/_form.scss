@@ -14,6 +14,8 @@
     text-align: center;
     padding: 0rem 0 0.5rem 0;
     margin: 0;
+    margin-top: 1rem;
+    line-height: 3rem;
   }
 }
 
@@ -22,9 +24,9 @@
 }
 
 .form-control {
-  background: lighten($light-green, 20%);
-  color: $dark-green;
-  border-radius: 10px;
+  background: $beige;
+  color: $text-black;
+  border-radius: $border-radius-sm;
 }
 
 .form-label {

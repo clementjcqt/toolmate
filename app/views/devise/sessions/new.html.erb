@@ -21,6 +21,7 @@
     </div>
     <div class="form-actions d-flex align-items-center justify-content-between">
       <%= f.button :submit, "Se connecter", class:"button" %>
+      <%= link_to "Créer un compte", new_user_registration_path, class:"button"  %>
       <%= render "devise/shared/links" %>
     </div>
   <% end %>

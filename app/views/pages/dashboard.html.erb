@@ -17,16 +17,16 @@
         </li>
         <%# Données en brut, à change plus tard %>
         <li>
-          <span class="top-content">1 prêts en cours</span>
+          <span class="top-content">1 prêt(s) en cours</span>
         </li>
         <li>
-          <span class="top-content">2 demande en attente</span>
+          <span class="top-content">2 demande(s) en attente</span>
         </li>
       </ul>
     </div>
     <div class="middle-section mt-4">
-    <%= link_to "Se déconnecter", destroy_user_session_path, data: { turbo_method: :delete } %>
       <h3>Mes outils</h3>
     </div>
+    <%= link_to "Se déconnecter", destroy_user_session_path, data: { turbo_method: :delete }, class:"button" %>
   </main>
 </div>
