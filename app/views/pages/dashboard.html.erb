@@ -8,16 +8,18 @@
     </span>
     <%= image_tag("avatar", class:"avatar") %>
   </header>
-  <main class="container">
+  <main>
     <div class="top-section mt-4">
       <h2>Bonjour Clément,</h2>
       <ul class="dashboard-top-cards">
         <li>
-          <span class="top-content"><%= @available_tools %> outils disponibles</span>
+          <span class="top-content"><%= @available_tools %> outils <br>
+            disponibles</span>
         </li>
         <%# Données en brut, à change plus tard %>
         <li>
-          <span class="top-content">1 prêt(s) en cours</span>
+          <span class="top-content">1 prêt(s) <br>
+            en cours</span>
         </li>
         <li>
           <span class="top-content">2 demande(s) en attente</span>
@@ -25,7 +27,27 @@
       </ul>
     </div>
     <div class="middle-section mt-4">
-      <h3>Mes outils</h3>
+      <div class="middle-section-header d-flex justify-content-between">
+        <h3 class="mb-3">Mes outils</h3>
+        <%= link_to "Ajouter un outil", class:"button" %>
+      </div>
+      <div class="tools-cards d-flex flex-wrap gap-4">
+        <% @tools.each do |tool| %>
+          <div class="card-tool">
+            <%= image_tag tool.photos.first if tool.photos.attached? %>
+            <div class="card-content">
+              <h4 class="tool-title"><%= tool.name %></h4>
+              <div class="card-content-info">
+                <% if tool.is_available %>
+                  <span>Chez moi</span>
+                <% else %>
+                  <span>Prêté</span>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
     <%= link_to "Se déconnecter", destroy_user_session_path, data: { turbo_method: :delete }, class:"button" %>
   </main>

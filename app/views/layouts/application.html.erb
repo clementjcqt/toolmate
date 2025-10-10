@@ -16,10 +16,18 @@
     <script src="https://npmcdn.com/@turf/turf/turf.min.js"></script>
   </head>
   <body>
-    <% if user_signed_in? %>
-      <%= render "shared/sidebar" %>
-    <% end %>
+    <div class="app">
+      <aside class="sidebar">
+        <% if user_signed_in? %>
+          <%= render "shared/sidebar" %>
+        <% end %>
+      </aside>
+      <main class="main">
+        <div class="dashboard-wrap px-4 py-4">
+          <%= yield %>
+        </div>
+      </main>
+    </div>
     <%= render "shared/flashes" %>
-      <%= yield %>
   </body>
 </html>
