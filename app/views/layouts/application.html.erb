@@ -15,12 +15,12 @@
     />
     <script src="https://npmcdn.com/@turf/turf/turf.min.js"></script>
   </head>
-  <body>
+  <body data-controller="loader">
     <div class="app">
+      <% if user_signed_in? %>
       <aside class="sidebar" data-controller="sidebar">
-        <% if user_signed_in? %>
-          <%= render "shared/sidebar" %>
-        <% end %>
+        <%= render "shared/sidebar" %>
+      <% end %>
       </aside>
       <main class="main-content">
         <% if user_signed_in? %>
@@ -33,13 +33,12 @@
     </div>
     <%= render "shared/flashes" %>
     <div id="app-loader"
-     class="app-loader hidden"
-     data-controller="loader"
-     aria-hidden="true">
+       data-turbo-permanent
+       class="app-loader hidden"
+       data-loader-target="overlay"
+       aria-hidden="true">
       <div class="app-loader__inner">
-        <div class="app-loader__logo">
-          ToolMate
-        </div>
+        <div class="app-loader__logo">ToolMate</div>
         <div class="app-loader__spinner" aria-label="Chargement…"></div>
       </div>
     </div>
