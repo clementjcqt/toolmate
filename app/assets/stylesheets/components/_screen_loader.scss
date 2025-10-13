@@ -1,0 +1,56 @@
+.app-loader {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(90deg, $dark-green 0%, darken($dark-green, 5%) 100%);
+  color: $beige;
+  z-index: 2000;
+
+  /* état par défaut : caché */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  /* transitions lissées */
+  transition: opacity .6s ease, visibility .6s ease;
+}
+
+/* visible quand la classe .hidden N’EST PAS là (tu la retires en JS) */
+.app-loader:not(.hidden) {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* micro-animation du contenu */
+.app-loader__inner {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+
+  /* départ un peu plus bas + léger voile */
+  transform: translateY(8px);
+  opacity: 0;
+  transition: transform .6s ease, opacity .6s ease;
+}
+
+.app-loader:not(.hidden) .app-loader__inner {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* logo + spinner (déjà en place) */
+.app-loader__logo   {
+  font-weight: 700;
+  font-size: clamp(20px, 3vw, 28px);
+  color: $beige;
+}
+.app-loader__spinner {
+  width: 36px; height: 36px;
+  border: 3px solid rgba($beige, .35);
+  border-top-color: $beige;
+  border-radius: 50%;
+  animation: tm-spin .9s linear infinite;
+}
+@keyframes tm-spin { to { transform: rotate(360deg); } }
