@@ -3,14 +3,16 @@
   top: 0;
   bottom: 0;
   left: 0;
-  width: 220px;
+  width: var(--sidebar-width);
   background: linear-gradient(90deg, $dark-green 0%, darken($dark-green, 5%) 100%);
   color: $text-white;
-  overflow-y: auto;   
+  overflow-y: auto;
   z-index: 1000;
+  transition: width 0.3s ease;
 
   a {
-    padding: 1.2rem 2rem;
+    padding: 1rem 2rem;
+    height: 56px;
   }
 
   h1 {
@@ -66,4 +68,84 @@
 #settings {
   padding-left: 2rem;
   font-size: 0.9rem;
+}
+
+// Toggle sidebar
+
+body.sidebar-collapsed {
+  --sidebar-width: 64px;
+}
+
+.sidebar .sidebar-nav span {
+  transition: opacity 0.2s ease;
+}
+
+.sidebar.is-collapsed .sidebar-nav .label {
+  opacity: 0;
+  max-width: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar.is-collapsed h1 {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.sidebar.is-collapsed .nav-link {
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+  gap: 0;
+}
+
+.sidebar.is-collapsed .icon-24 {
+  margin-right: 0;
+}
+
+.sidebar.is-collapsed a.nav-link {
+  padding: 0.75rem 0;
+  text-align: center;
+}
+
+.toggle-sidebar-btn .toggle-button {
+  transition: transform 0.3s ease;
+}
+
+.toggle-sidebar-btn.rotated .toggle-button {
+  transform: rotate(180deg);
+}
+
+.toggle-sidebar-btn {
+  background: transparent;
+  border: none;
+  color: $beige;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+
+// Active link section
+
+.sidebar .nav-link.is-active {
+  background: rgba($beige, 0.15);
+  border-left: 4px solid $beige;
+  color: $beige;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
+  svg {
+    stroke: $beige;
+  }
+}
+
+.sidebar .nav-link.is-active:hover {
+  background: rgba($beige, 0.25);
+  border-left-color: lighten($beige, 5%);
 }

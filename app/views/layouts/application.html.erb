@@ -17,12 +17,12 @@
   </head>
   <body>
     <div class="app">
-      <aside class="sidebar">
+      <aside class="sidebar" data-controller="sidebar">
         <% if user_signed_in? %>
           <%= render "shared/sidebar" %>
         <% end %>
       </aside>
-      <main class="main">
+      <main class="main-content">
         <% if user_signed_in? %>
           <%= render "shared/header" %>
         <% end %>
@@ -32,5 +32,16 @@
       </main>
     </div>
     <%= render "shared/flashes" %>
+    <div id="app-loader"
+     class="app-loader hidden"
+     data-controller="loader"
+     aria-hidden="true">
+      <div class="app-loader__inner">
+        <div class="app-loader__logo">
+          ToolMate
+        </div>
+        <div class="app-loader__spinner" aria-label="Chargement…"></div>
+      </div>
+    </div>
   </body>
 </html>

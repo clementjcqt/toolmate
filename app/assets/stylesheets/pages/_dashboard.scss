@@ -1,7 +1,8 @@
-.main {
-  margin-left: 220px;
+.main-content {
+  margin-left: var(--sidebar-width);
+  transition: margin-left 0.3s ease, width 0.3s ease;
   min-height: 100vh;
-  width: calc(100% - 220px);
+  width: calc(100% - var(--sidebar-width));
 }
 
 .dashboard-wrap {
