@@ -1,13 +1,13 @@
 class ToolsController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
-  before_action :set_tool, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :set_owned_tool, only: [:edit, :update, :destroy]
+  before_action :set_public_tool, only: :show
 
   def index
     @tools = Tool.all
   end
 
   def show
-    @tool = Tool.find(params[:id])
   end
 
   def new
@@ -46,11 +46,15 @@ class ToolsController < ApplicationController
     params.require(:tool).permit(:name, :category, :price, :condition, :is_available, photos: [])
   end
 
-  def set_tool
-    @tool = current_user.tools.find_by(id: params[:id])
-    unless @tool.user == current_user
-      redirect_to root_path, alert: "Tu n'as pas accès à cet outil."
-    end
+  def set_public_tool
+    @tool = Tool.find(params[:id])
   end
 
+  def set_owned_tool
+    @tool = current_user.tools.find_by(id: params[:id])
+    if @tool.nil?
+      redirect_to tools_path, alert: "L'outil n'existe pas"
+      return
+    end
+  end
 end
