@@ -22,13 +22,11 @@
         <%= render "shared/sidebar" %>
       <% end %>
       </aside>
-      <main class="main-content">
+      <main>
         <% if user_signed_in? %>
           <%= render "shared/header" %>
         <% end %>
-        <div class="dashboard-wrap px-4 py-4">
-          <%= yield %>
-        </div>
+        <%= yield %>
       </main>
     </div>
     <%= render "shared/flashes" %>
