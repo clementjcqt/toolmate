@@ -1,15 +1,12 @@
 .main-content {
-  margin-left: var(--sidebar-width);
-  transition: margin-left 0.3s ease, width 0.3s ease;
-  min-height: 100vh;
   width: 100%;
+  padding: 48px;
 }
 
 .dashboard-wrap {
-  max-width: 1120px;
-  margin: --sidebar-width auto;
+  margin: 0 auto;
   padding-inline: clamp(16px, 4vw, 40px);
-  width: calc(100% - --sidebar-width);
+  width: 100%;
 }
 
 .top-section {
